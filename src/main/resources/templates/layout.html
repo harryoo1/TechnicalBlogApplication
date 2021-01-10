@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="site-head"></head>
+<body>
+<header th:fragment="logged-out" th:remove="tag">
+    <header>
+        <button><a style="text-decoration: none;" href="login.html" th:href="@{users/login}">Login</a></button>
+        <button><a style="text-decoration: none;" href="register.html" th:href="@{users/register}">Register</a></button>
+    </header>
+</header>
+
+<header th:fragment="logged-in" th:remove="tag">
+    <header>
+        <form method="post" th:action="@{users/logout}">
+            <button type="submit" value="Logout">Logout</button>
+        </form>
+    </header>
+</header>
+</body>
+</html>
